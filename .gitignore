@@ -38,6 +38,5 @@ next-env.d.ts
 
 # backend stuff
 server/uploads
-server/venv/include
-server/venv/lib
+server/venv
 

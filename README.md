@@ -3,7 +3,7 @@
 simple application that searches for faces in an image uploaded by the user.
 any identified faces are highlighted with a box.
 
-visit [here](simple-face-recognition.vercel.app)!
+visit <a href="https://simple-face-recognition.vercel.app/" target="_blank">here</a>!
 
 <div>
     <img src="client/public/image1.png" alt="example image before editing">

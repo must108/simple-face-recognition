@@ -20,10 +20,10 @@ def allowed_file(filename):
 def upload_file():
     print(request.files)
     if 'file' not in request.files:
-        return jsonify({ 'error': 'No file part' }), 400
+        return jsonify({ 'error': 'server-side error! (this is for devs)' }), 400
     file = request.files['file']
     if file.filename == '':
-        return jsonify({ 'error': 'No selected file' }), 400
+        return jsonify({ 'error': 'you did not select a file!' }), 400
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         file_path = os.path.join(UPLOAD_FOLDER, filename)
@@ -48,7 +48,7 @@ def upload_file():
 
         return send_file(edited_path, mimetype=f'image/{filename.rsplit(".", 1)[1].lower()}')
     else:
-        return jsonify({ 'error': 'File type not allowed' }), 400
+        return jsonify({ 'error': 'file type not allowed!' }), 400
 
 if __name__ == '__main__':
     app.run(debug = True)

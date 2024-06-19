@@ -1,12 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [file, setFile] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
   const [possibleError, setPossibleError] = useState('');
+
+  useEffect(() => {
+    setTimeout(() => {
+      setPossibleError('');
+    }, 2500)
+  }, [possibleError]);
 
   const handleFileChange = (e: any) => {
     setFile(e.target.files[0]);
@@ -33,7 +39,7 @@ export default function Home() {
       setImageUrl(url);
     } else {
       const error = await res.json();
-      setPossibleError('something went wrong!');
+      setPossibleError(error.error);
     }
   };
 

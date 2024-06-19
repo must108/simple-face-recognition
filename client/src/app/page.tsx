@@ -56,7 +56,7 @@ export default function Home() {
     <>
       <div className="flex flex-col items-center
       justify-center h-[100vh] bg-slate-900
-      text-white p-4"> 
+      text-white p-4 overflow-hidden"> 
         {
           imageUrl ?
           null

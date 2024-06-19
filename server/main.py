@@ -13,12 +13,31 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'bmp', 'tiff', 'heic', 'hevc'}
 os.makedirs(UPLOAD_FOLDER, exist_ok = True)
 os.makedirs(EDITED_FOLDER, exist_ok = True)
 
+colors_dict = {
+    "red": (0, 0, 255),
+    "green": (0, 255, 0),
+    "blue": (255, 0, 0),
+    "black": (0, 0, 0),
+    "gray": (96, 96, 96),
+    "pink": (178, 102, 255),
+    "purple": (255, 102, 178),
+    "light_blue": (255, 128, 0),
+    "orange": (75, 156, 211),
+}
+
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/upload', methods = ['POST'])
 def upload_file():
     print(request.files)
+    color = request.form.get('color')
+    print(color)
+
+    if color not in colors_dict:
+        return jsonify({ 'error': 'invalid/null color!' }), 400
+    cascade_color = colors_dict[color]
+    
     if 'file' not in request.files:
         return jsonify({ 'error': 'server-side error! (this is for devs)' }), 400
     file = request.files['file']
@@ -40,9 +59,9 @@ def upload_file():
                     scaleFactor=1.3, minNeighbors=2, minSize=(75, 75))
         
         for(i, (x, y, w, h)) in enumerate(rects):
-            cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            cv2.rectangle(image, (x, y), (x + w, y + h), cascade_color, 2)
             cv2.putText(image, "Face #{}".format(i + 1), (x, y - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 255, 0), 2)
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.55, cascade_color, 2)
             
         cv2.imwrite(edited_path, image)
 

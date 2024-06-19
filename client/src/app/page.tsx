@@ -7,7 +7,8 @@ export default function Home() {
   const [file, setFile] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
   const [possibleError, setPossibleError] = useState('');
-
+  const [color, setColor] = useState("green");
+ 
   useEffect(() => {
     setTimeout(() => {
       setPossibleError('');
@@ -18,6 +19,10 @@ export default function Home() {
     setFile(e.target.files[0]);
   };
 
+  const handleColorChange = (e: any) => {
+    setColor(e.target.value);
+  }
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     if (!file) {
@@ -27,6 +32,8 @@ export default function Home() {
     
     const formData = new FormData();
     formData.append('file', file!);
+    formData.append('color', color);
+    console.log('formdata: ', formData);
 
     const res = await fetch('http://127.0.0.1:5000/upload', {
       method: 'POST',
@@ -76,6 +83,26 @@ export default function Home() {
           <form onSubmit={handleSubmit} className="flex flex-col items-center
           justify-center text-center space-y-4">
             <input type="file" accept="image/*" onChange={handleFileChange}/>
+            <div>
+              <label htmlFor="colors"
+              className="font-bold p-4">
+                box color:
+              </label>
+              <select name="colors" id="colors" defaultValue={"green"}
+              className="bg-slate-900 border-2 border-gray-700 
+              rounded-md px-3 py-1"
+              onChange={handleColorChange}>
+                <option className="font-bold" value="red">red</option>
+                <option className="font-bold" value="green">green</option>
+                <option className="font-bold" value="blue">blue</option>
+                <option className="font-bold" value="black">black</option>
+                <option className="font-bold" value="gray">gray</option>
+                <option className="font-bold" value="pink">pink</option>
+                <option className="font-bold" value="purple">purple</option>
+                <option className="font-bold" value="light_blue">light blue</option>
+                <option className="font-bold" value="orange">orange</option>
+              </select>
+            </div>
               <button type="submit"
               className="bg-blue-700 hover:bg-blue-900
               text-white px-3 py-1 rounded font-bold

@@ -38,5 +38,6 @@ next-env.d.ts
 
 # backend stuff
 server/uploads
+server/edited
 server/venv
 

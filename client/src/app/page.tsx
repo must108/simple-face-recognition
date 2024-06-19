@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function Home() {
   const [file, setFile] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
+  const [possibleError, setPossibleError] = useState('');
 
   const handleFileChange = (e: any) => {
     setFile(e.target.files[0]);
@@ -14,7 +15,7 @@ export default function Home() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     if (!file) {
-      console.error('no file selected');
+      setPossibleError('no file selected!');
       return;
     }
     
@@ -32,7 +33,7 @@ export default function Home() {
       setImageUrl(url);
     } else {
       const error = await res.json();
-      console.error('Upload error: ', error);
+      setPossibleError('something went wrong!');
     }
   };
 
@@ -80,6 +81,13 @@ export default function Home() {
           </>
         }
         {imageUrl && <img src={imageUrl} alt="Uploaded" />}
+        {possibleError ? 
+        <p className="text-red-500 mt-4"
+        >
+          {possibleError}</p>
+        :
+        null
+        }
       </div>
 
     </>

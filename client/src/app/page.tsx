@@ -73,13 +73,18 @@ export default function Home() {
                   upload an image and this tool
                   will identify all faces in the 
                   picture. &#40;and will draw
-                  a funny box around it&#41;
+                  a funny box around it&#41;.
+                </p>
+                <p className="text-xs sm:text-sm text-center
+                pb-3">
+                  this software is not 100% accurate, 
+                  so don&apos;t be surprised if it highlights
+                  random things.
                 </p>
                 <p className="text-xs sm:text-sm text-center
                 pb-8">
-                  this software is not 100% accurate, 
-                  so don&apos;t be surprised if it highlights
-                  random things!
+                  your images are never stored and can&apos;t be viewed by
+                  anyone else!
                 </p>
             </div>
           <form onSubmit={handleSubmit} className="flex flex-col items-center
@@ -125,13 +130,27 @@ export default function Home() {
                 <option className="font-bold" value="orange">orange</option>
               </select>
             </div>
-              <button type="submit"
-              className="bg-blue-700 hover:bg-blue-900
-              text-white px-3 py-1 rounded font-bold
-              transition delay-50"
-              >
-                upload
-              </button>
+              <div className="flex flex-col items-center space-y-0">
+                <button type="submit"
+                className="bg-blue-700 hover:bg-blue-900
+                text-white px-3 py-1 rounded font-bold
+                transition delay-50"
+                >
+                  upload
+                </button>
+                <p className="
+                text-[0.65rem] leading-4
+                mt-0
+                text-slate-700"
+                >
+                  built by <span
+                  className="underline cursor-pointer"
+                  >
+                    <a href="https://github.com/must108"
+                    target="_blank">must</a>
+                  </span>
+                  </p>
+              </div>
             </form>
           </>
         }

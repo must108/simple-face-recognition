@@ -83,7 +83,8 @@ export default function Home() {
                 </p>
                 <p className="text-xs sm:text-sm text-center
                 pb-8">
-                  your images are never stored and can&apos;t be viewed by
+                  your images are never stored and 
+                  can&apos;t be viewed by <br />
                   anyone else!
                 </p>
             </div>

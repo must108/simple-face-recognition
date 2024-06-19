@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Face Detection Tool :D",
   description: "Detect faces in pictures!",
   icons: {
-    icon: 'favicon.ico'
+    icon: 'favicon.ico',
   },
 };
 

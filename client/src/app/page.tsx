@@ -35,7 +35,8 @@ export default function Home() {
     formData.append('color', color);
     console.log('formdata: ', formData);
 
-    const res = await fetch('http://127.0.0.1:5000/upload', {
+    const res = await fetch(
+      'https://facial-recognition-69bf04706b18.herokuapp.com/upload', {
       method: 'POST',
       body: formData,
     });

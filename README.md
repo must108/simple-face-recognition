@@ -1,4 +1,4 @@
-# facial recognition app
+# facial detection app
 
 simple application that searches for faces in an image uploaded by the user.
 any identified faces are highlighted with a box.

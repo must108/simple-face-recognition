@@ -66,7 +66,7 @@ export default function Home() {
                 <h1
                 className="font-bold
                 text-3xl sm:text-4xl mb-8 text-center"
-                >facial recognition tool</h1>
+                >facial detection tool</h1>
                 <p className="text-xs sm:text-sm text-center
                 pb-3"
                 >

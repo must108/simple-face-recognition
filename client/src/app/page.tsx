@@ -65,9 +65,9 @@ export default function Home() {
               <div className="w-[390px]">
                 <h1
                 className="font-bold
-                text-4xl mb-8 text-center"
+                text-3xl sm:text-4xl mb-8 text-center"
                 >facial recognition tool</h1>
-                <p className="text-sm text-center
+                <p className="text-xs sm:text-sm text-center
                 pb-3"
                 >
                   upload an image and this tool
@@ -75,7 +75,7 @@ export default function Home() {
                   picture. &#40;and will draw
                   a funny box around it&#41;
                 </p>
-                <p className="text-sm text-center
+                <p className="text-xs sm:text-sm text-center
                 pb-8">
                   this software is not 100% accurate, 
                   so don&apos;t be surprised if it highlights

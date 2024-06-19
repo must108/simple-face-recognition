@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { FaCheck } from 'react-icons/fa';
 
 export default function Home() {
   const [file, setFile] = useState(null);
@@ -61,7 +62,7 @@ export default function Home() {
           null
           :
             <>
-              <div className="w-[400px]">
+              <div className="w-[390px]">
                 <h1
                 className="font-bold
                 text-4xl mb-8 text-center"
@@ -83,7 +84,27 @@ export default function Home() {
             </div>
           <form onSubmit={handleSubmit} className="flex flex-col items-center
           justify-center text-center space-y-4">
-            <input type="file" accept="image/*" onChange={handleFileChange}/>
+            <div className="flex justify-center
+            items-center flex-row">
+              <input className="hidden"
+              id="imageFile" 
+              type="file" accept="image/*" 
+              onChange={handleFileChange} />
+              <label htmlFor="imageFile"
+              className="bg-slate-900 hover:bg-blue-700
+              text-white px-2 py-1 rounded font-bold
+              transition delay-50 border-2 border-gray-700
+              hover:border-transparent">
+                select image...
+              </label>
+              <div className="ml-3">
+                { file ?
+                  <FaCheck color="green"/>
+                  :
+                  null
+                }
+              </div>
+            </div>
             <div>
               <label htmlFor="colors"
               className="font-bold p-4">

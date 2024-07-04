@@ -37,7 +37,7 @@ export default function Home() {
     console.log('formdata: ', formData);
 
     const res = await fetch(
-      process.env.NEXT_PUBLIC_LINK!, {
+      process.env.NEXT_PUBLIC_POST_LINK!, {
       method: 'POST',
       body: formData,
     });

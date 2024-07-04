@@ -36,8 +36,6 @@ export default function Home() {
     formData.append('color', color);
     console.log('formdata: ', formData);
 
-    console.log(process.env.NEXT_PUBLIC_POST_LINK!);
-
     const res = await fetch(
       process.env.NEXT_PUBLIC_POST_LINK!, {
       method: 'POST',

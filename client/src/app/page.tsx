@@ -37,7 +37,7 @@ export default function Home() {
     console.log('formdata: ', formData);
 
     const res = await fetch(
-      'https://facial-recognition-69bf04706b18.herokuapp.com/upload', {
+      process.env.NEXT_PUBLIC_LINK!, {
       method: 'POST',
       body: formData,
     });

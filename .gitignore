@@ -41,3 +41,6 @@ server/uploads
 server/edited
 server/venv
 
+# env
+client/.env
+

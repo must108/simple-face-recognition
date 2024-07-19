@@ -11,7 +11,8 @@ export default function UploadImage({
 } : UploadImageProps) {
     return (
         <div className="flex justify-center
-        items-center flex-row">
+        items-center flex-row"
+        data-testid='primary-div'>
           <input className="hidden"
           id="imageFile" 
           type="file" accept="image/*" 
@@ -20,12 +21,13 @@ export default function UploadImage({
           className="bg-slate-900 hover:bg-blue-700
           text-white px-2 py-1 rounded font-bold
           transition delay-50 border-2 border-gray-700
-          hover:border-transparent">
+          hover:border-transparent"
+          data-testid='select-image-text'>
             select image...
           </label>
           <div className="ml-3">
             { file ?
-              <FaCheck color="green"/>
+              <FaCheck color="green" data-testid='check' />
               :
               null
             }

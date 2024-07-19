@@ -5,6 +5,7 @@ export default function BuiltBy() {
         text-[0.65rem] leading-4
         mt-0
         text-slate-700"
+        data-testid="built-by"
         >
           built by <span
           className="underline cursor-pointer"

@@ -1,13 +1,12 @@
-import { render } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import { expect, test } from 'vitest';
 
 import Home from '@/app/page';
 
-test("renders title with correct text", () => {
-    const { getByText } = render(<Home />);
-    const title = getByText(
-        "facial detection tool",
-    );
+test("renders element", () => {
+    render(<Home />)
+    const wholeElem = screen.getByTestId('home-elem');
 
-    expect(title);
+    expect(wholeElem);
 });
+

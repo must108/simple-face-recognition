@@ -1,7 +1,7 @@
 
 export default function Description() {
     return (
-        <div className="w-[390px]">
+        <div className="w-[390px]" data-testid='desc'>
                 <h1
                 className="font-bold
                 text-3xl sm:text-4xl mb-8 text-center"

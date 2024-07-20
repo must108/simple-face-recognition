@@ -21,7 +21,7 @@ jobs:
               uses: './client/tooling/github/setup'
 
             - name: Lint
-              run: npm run lint
+              run: cd client && npm run lint
     test:
         runs-on: ubuntu-latest
         steps:
@@ -31,4 +31,4 @@ jobs:
               uses: './client/tooling/github/setup'
 
             - name: Test (Vitest)
-              run: npm run test
+              run: cd client && npm run test

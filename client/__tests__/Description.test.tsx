@@ -3,6 +3,10 @@ import { expect, test } from 'vitest';
 
 import Description from '@/app/components/Description';
 
+test("Description smoke test", () => {
+    render(<Description />);
+});
+
 test("renders description component and has correct text, class", () => {
     render(<Description />);
     const elem = screen.getByTestId('desc');

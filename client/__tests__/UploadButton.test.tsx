@@ -3,6 +3,10 @@ import { expect, test } from 'vitest';
 
 import UploadButton from '@/app/components/UploadButton';
 
+test("uploadButton smoke test", () => {
+    render(<UploadButton />);
+});
+
 test("renders button, has correct classes", () => {
     render(<UploadButton />);
     const elem = screen.getByTestId('upload-button');

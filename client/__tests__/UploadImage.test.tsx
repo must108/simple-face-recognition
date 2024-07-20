@@ -3,6 +3,10 @@ import { expect, test } from 'vitest';
 
 import UploadImage from '@/app/components/UploadImage';
 
+test("uploadimage smoke test", () => {
+    render(<UploadImage func={() => {}} file={null} />);
+});
+
 test("renders div, label, correct classes", () => {
     const sampleFunct = () => {
         return;

@@ -3,6 +3,10 @@ import { expect, test } from 'vitest';
 
 import BuiltBy from '@/app/components/BuiltBy';
 
+test("built by smoke test", () => {
+    render(<BuiltBy />);
+});
+
 test("renders built by and has correct styles", () => {
     render(<BuiltBy />);
     const elem = screen.getByTestId(

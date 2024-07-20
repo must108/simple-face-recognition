@@ -3,6 +3,9 @@ import { expect, test } from 'vitest';
 
 import SelectColor from '@/app/components/SelectColor';
 
+test("selectColor smoke test", () => {
+    render(<SelectColor func={(() => {})} />);
+})
 
 test("rendered element exists, has classes, and has all options", () => {
     const handleColorChange = (e: any) => {

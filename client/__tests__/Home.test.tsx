@@ -3,6 +3,10 @@ import { expect, test } from 'vitest';
 
 import Home from '@/app/page';
 
+test("Home component smoke test", () => {
+    render(<Home />);
+});
+
 test("renders element", () => {
     render(<Home />)
     const wholeElem = screen.getByTestId('home-elem');

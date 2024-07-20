@@ -12,4 +12,5 @@ runs:
         node-version: '18'
       
     - shell: bash
+      run: cd client
       run: npm install

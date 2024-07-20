@@ -12,4 +12,4 @@ runs:
         node-version: '18'
       
     - shell: bash
-      run: cd client npm install
+      run: cd client && npm install
